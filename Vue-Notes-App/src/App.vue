@@ -5,5 +5,9 @@ const num = 10;
 </script>
 
 <template>
+	<div class="column">
+		<!-- -->
+	</div>
+
 	<RouterView />
 </template>
