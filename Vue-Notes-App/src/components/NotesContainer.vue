@@ -1,6 +1,14 @@
 <template>
+	<Teleport to="#top">
+		<div  v-if="showAddModal" class="overlay">
+			<AddNoteModal 
+				@close="(i) => showAddModal = i"
+				@add-note="addNote"
+			/>
+		</div>
+	</Teleport>
 	<div>
-		<!-- <button @click="showModal = true">+</button>  -->
+		<button @click="showAddModal = true">+</button> 
 	</div>
 	<div class="cards-container"> 
 		<div v-for="note in notes" 
@@ -19,7 +27,8 @@
 <script setup>
 	import { ref } from 'vue';
     import Note from './Note.vue';
-
+	import AddNoteModal from './AddNoteModal.vue'
+	const showAddModal = ref(false)
 
 	const notes = ref([{
 		title: "Sample Title",

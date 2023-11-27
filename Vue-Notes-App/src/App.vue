@@ -6,6 +6,7 @@ const num = 10;
 </script>
 
 <template>
+	<div id="top"></div>
 	<NotesContainer></NotesContainer>
 	<!-- <RouterView /> -->
 </template>
