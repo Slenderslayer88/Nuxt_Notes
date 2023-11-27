@@ -6,9 +6,6 @@ const num = 10;
 </script>
 
 <template>
-	<div class="collection-bar">
-		
-	</div>
 	<NotesContainer></NotesContainer>
-	<RouterView />
+	<!-- <RouterView /> -->
 </template>

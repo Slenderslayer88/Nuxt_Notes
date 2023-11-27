@@ -2,17 +2,17 @@
     <div id="border">
         <div id="header">
             <div id="title">
-                <h1>{{ title }}</h1>
+                <h1>{{ note.title }}</h1>
             </div>
         </div>
     
         <div id="main-text">
-
+			{{ note.text }}
         </div>
         <div id="btns-container">
             <div id="btns-div">
                 <div class="btn" id="delete-btn-div">
-                    <button id="delete-btn">Delete</button>
+                    <button id="delete-btn" @click="onDeleteClick">Delete</button>
                 </div>
                 <div class="btn right-align" id="edit-btn-div">
                     <button id="show-modal" @click="onEditClick">Edit</button>
@@ -23,11 +23,11 @@
     <NotePopupModal v-if="showNotePopupModal" @close="onEditClose">
 
         <template v-slot:header>
-            You are editing {{ title }}
+            You are editing {{ note.title }}
         </template>
         <template v-slot:body>
             <textarea id="text-area">
-                {{ text }}
+                {{ note.text }}
             </textarea>
         </template>
     </NotePopupModal>
@@ -44,18 +44,17 @@
         showNotePopupModal.value = true;
         emit("edit");
     }
-
+	
+	function onDeleteClick() {
+		emit('delete', props.note.id)
+	}
     function onEditClose(){
         showNotePopupModal.value = false;
     }
     
-    const emit = defineEmits(['delete', 'edit'])
+    const emit = defineEmits(['delete', 'edit']);
 
-    defineProps({
-        title: String,
-        text: String,
-        id: String
-    })
+    const props = defineProps(['note']);
 </script>
 
 <style scoped>
