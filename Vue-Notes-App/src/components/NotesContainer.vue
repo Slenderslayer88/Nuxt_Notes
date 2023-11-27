@@ -46,4 +46,13 @@
 			}
 		}
 	}
+
+	const addNote = (note) => {
+		notes.value.push({
+			title: note.title,
+			text: note.text,
+			id: Math.floor(Math.random() * 1000000)
+		})
+		showAddModal.value = false;
+	}
 </script>
