@@ -2,7 +2,7 @@
     <div id="border">
         <div id="header">
             <div id="title">
-                <h1>{{ note.title }}</h1>
+                {{ note.title }}
             </div>
         </div>
     
@@ -11,15 +11,12 @@
         </div>
         <div id="btns-container">
             <div id="btns-div">
-                <div class="btn" id="delete-btn-div">
-                    <button id="delete-btn" @click="onDeleteClick">Delete</button>
-                </div>
-                <div class="btn right-align" id="edit-btn-div">
-                    <button id="show-modal" @click="onEditClick">Edit</button>
-                </div>
+                <button id="delete-btn" @click="onDeleteClick">Delete</button>
+                <button id="show-modal" @click="onEditClick">Edit</button>
             </div>   
         </div>
     </div>
+
     <NotePopupModal v-if="showNotePopupModal" @close="onEditClose">
 
         <template v-slot:header>
@@ -68,7 +65,6 @@
         padding-bottom: 30px;
     }
     #btns-div {
-        position: absolute;
         bottom: 0;
         width: 100%
     }
