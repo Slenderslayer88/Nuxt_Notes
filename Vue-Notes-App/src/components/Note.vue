@@ -14,10 +14,7 @@
 </template>
 
 <script setup>
-import { emit } from 'process';
-
-    
-    defineEmits(['delete', 'edit'])
+    const emits = defineEmits(['delete', 'edit'])
 
     defineProps({
         title: String,
