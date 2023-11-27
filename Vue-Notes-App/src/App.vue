@@ -10,3 +10,9 @@ const num = 10;
 	<NotesContainer></NotesContainer>
 	<!-- <RouterView /> -->
 </template>
+
+<style>
+	body {
+		margin: 0px;
+	}
+</style>

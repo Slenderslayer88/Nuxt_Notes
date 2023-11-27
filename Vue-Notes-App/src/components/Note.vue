@@ -60,7 +60,6 @@
         height: 500px;
     }
     #btns-container {
-        position: relative;
         min-height: 50px;
         padding-bottom: 30px;
     }
