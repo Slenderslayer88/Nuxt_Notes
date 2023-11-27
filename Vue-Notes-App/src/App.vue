@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Note from "./components/Note.vue"
+import NotesContainer from './components/NotesContainer.vue';
 const num = 10;
 </script>
 
@@ -8,6 +9,6 @@ const num = 10;
 	<div class="collection-bar">
 		
 	</div>
-	<Note title="test"></Note>
+	<NotesContainer></NotesContainer>
 	<RouterView />
 </template>

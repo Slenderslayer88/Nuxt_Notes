@@ -1,5 +1,8 @@
 <template>
-	about page
+    <main>
+        <h1>about page</h1>
+    </main>
+	
 </template>
 
 <style>
