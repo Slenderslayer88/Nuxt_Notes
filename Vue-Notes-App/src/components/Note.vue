@@ -41,13 +41,14 @@
         showNotePopupModal.value = true;
         emit("edit");
     }
+
+    function onEditClose(){
+        showNotePopupModal.value = false;
+    }
 	
 	function onDeleteClick() {
 		emit('delete', props.note.id)
 	}
-    function onEditClose(){
-        showNotePopupModal.value = false;
-    }
     
     const emit = defineEmits(['delete', 'edit']);
 
