@@ -1,7 +1,13 @@
 <template>
-	<div class="collection-container">
-          <NoteCollection></NoteCollection>  
-	</div>
+    <div>
+        <div class="justify-evenly flex">
+            <button class="inline">Add</button>
+            <button class="inline">Delete</button>
+        </div>
+        <div class="collection-container border-solid border-3">
+            <NoteCollection></NoteCollection>  
+        </div>
+    </div>
 </template>
 
 <script setup>
