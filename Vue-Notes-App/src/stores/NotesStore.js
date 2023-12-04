@@ -2,11 +2,14 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useNotesStore = defineStore('notes', () => {
-	const count = ref(0)
-	const doubleCount = computed(() => count.value * 2)
-	function increment() {
-		count.value++
+	const currentCollection = { name: "NAME", noteArr: [{noteobj}]}; //POINTER TO COLLECTION OBJECT
+
+	const collections = []; //ALL COLLECTIONS
+
+	//ADD A COLLECTION OBJECT
+	function addCollection({name, noteArr}) {
+
 	}
 	
-	return { count, doubleCount, increment }
+	return { currentCollection, collections, addCollection }
 })
