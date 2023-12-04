@@ -8,8 +8,8 @@ const num = 10;
 
 <template>
 	<div id="top"></div>
-    <CollectionBar />
-	<NotesContainer />
+    <CollectionBar class="w-1/4 h-screen"/>
+	<NotesContainer class="w-3/4 h-screen"/>
 	<!-- <RouterView /> -->
 </template>
 
