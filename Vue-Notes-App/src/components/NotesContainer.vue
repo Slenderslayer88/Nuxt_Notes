@@ -10,8 +10,8 @@
 	<div>
 		<button @click="showAddModal = true">+</button> 
 	</div>
-	<div class="cards-container"> 
-		<div v-for="note in notes" 
+	<div class="cards-container flex space-x5"> 
+		<div class="note" v-for="note in notes" 
 			ref="el"
 			key="note.name"
 		>
@@ -56,3 +56,10 @@
 		showAddModal.value = false;
 	}
 </script>
+
+<style scoped>
+    .note {
+        display: flex;
+        flex-direction: row;
+    }
+</style>

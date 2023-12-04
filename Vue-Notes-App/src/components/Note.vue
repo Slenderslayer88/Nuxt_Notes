@@ -1,12 +1,12 @@
 <template>
     <div id="border">
         <div id="header">
-            <div id="title">
+            <div id="title" class="bg-red">
                 {{ note.title }}
             </div>
         </div>
     
-        <div id="main-text">
+        <div id="main-text" class="bg-red">
 			{{ note.text }}
         </div>
         <div id="btns-container">
@@ -19,13 +19,9 @@
 
     <NotePopupModal v-if="showNotePopupModal" @close="onEditClose">
 
-        <template v-slot:header>
-            You are editing {{ note.title }}
-        </template>
+        <template v-slot:header> You are editing {{ note.title }} </template>
         <template v-slot:body>
-            <textarea id="text-area">
-                {{ note.text }}
-            </textarea>
+            <textarea id="text-area">{{ note.text }}</textarea>
         </template>
     </NotePopupModal>
 </template>
