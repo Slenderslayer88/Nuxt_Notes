@@ -1,19 +1,21 @@
 <template>
-    <div id="border">
-        <div id="header">
-            <div id="title" class="bg-red">
-                {{ note.title }}
+    <div class="flex">
+        <div id="border" class="flex justify-between flex-col">
+            <div id="header">
+                <div id="title" class="font-bold text-2xl">
+                    {{ note.title }}
+                </div>
             </div>
-        </div>
-    
-        <div id="main-text" class="bg-red">
-			{{ note.text }}
-        </div>
-        <div id="btns-container">
-            <div id="btns-div">
-                <button id="delete-btn" @click="onDeleteClick">Delete</button>
-                <button id="show-modal" @click="onEditClick">Edit</button>
-            </div>   
+        
+            <div id="main-text">
+                {{ note.text }}
+            </div>
+            <div id="btns-container" >
+                <div id="btns-div" class="flex justify-evenly">
+                    <button id="delete-btn" @click="onDeleteClick">Delete</button>
+                    <button id="show-modal" @click="onEditClick">Edit</button>
+                </div>   
+            </div>
         </div>
     </div>
 
@@ -55,14 +57,6 @@
     #text-area {
         width: 100%;
         height: 500px;
-    }
-    #btns-container {
-        min-height: 50px;
-        padding-bottom: 30px;
-    }
-    #btns-div {
-        bottom: 0;
-        width: 100%
     }
     #title {
         text-align: center;

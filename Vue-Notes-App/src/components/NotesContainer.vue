@@ -7,11 +7,8 @@
 			/>
 		</div>
 	</Teleport>
-	<div>
-		<button @click="showAddModal = true">+</button> 
-	</div>
 	<div class="cards-container flex space-x5"> 
-		<div class="note" v-for="note in notes" 
+		<div v-for="note in notes" 
 			ref="el"
 			key="note.name"
 		>
@@ -20,6 +17,9 @@
 				@delete="deleteNote"
 			/>
 		</div>
+        <div class="flex justify-between flex-col w-80 h-80">
+		    <button @click="showAddModal = true">+</button> 
+	    </div>  
 	</div>
     
 </template>
