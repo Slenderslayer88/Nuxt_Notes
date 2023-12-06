@@ -3,7 +3,12 @@ export class Collection {
 	title="";
 	notes=[];
 
-	constructor({title, notes}) {
-		
+	addNoteToCollection(note) {
+		this.notes.push(note)
+	}
+
+	constructor(_title, _notes) {
+		this.title = _title;
+		this.notes = _notes;
 	}
 }
