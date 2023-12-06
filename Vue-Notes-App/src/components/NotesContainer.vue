@@ -35,13 +35,7 @@
 
 	const deleteNote = (id) => {
 		console.log('removing note', id)
-		for (let i = 0; i < notes.value.length; i++) {
-			if (notes.value[i].id === id) {
-				console.log(notes.value[i].id);
-				console.log(id)
-				notes.value.splice(i, 1);
-			}
-		}
+		noteStore.deleteNote(id)
 	}
 
 	const addNote = (note) => {

@@ -4,7 +4,7 @@ export class Note {
 	title = "";
 
 	constructor(_maintext, _title) {
-		this.id=123
+		this.id=Math.floor(Math.random() * 10001);
 		this.mainText = _maintext;
         this.title = _title;
 	}
