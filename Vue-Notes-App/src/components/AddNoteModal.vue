@@ -14,7 +14,7 @@
     const emit = defineEmits(['addNote', 'close'])
 
     function emitAddNote() {
-        console.log(newNoteString);
+        //console.log(newNoteString);
         emit('addNote', { title: newNoteTitle.value, text: newNoteString.value });
     }
     function emitClose() {

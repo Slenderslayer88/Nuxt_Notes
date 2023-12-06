@@ -8,7 +8,7 @@
             </div>
         
             <div id="main-text">
-                {{ note.text }}
+                {{ note.mainText }}
             </div>
             <div id="btns-container" >
                 <div id="btns-div" class="flex justify-evenly">
@@ -30,7 +30,7 @@
 
 <script setup>
     import NotePopupModal from './NotePopupModal.vue';
-
+	
     import { ref } from 'vue'
 
     const showNotePopupModal = ref(false);

@@ -8,7 +8,7 @@
 		</div>
 	</Teleport>
 	<div class="cards-container flex space-x5"> 
-		<div v-for="note in notes" 
+		<div v-for="note in noteStore.notes" 
 			ref="el"
 			key="note.name"
 		>
@@ -28,13 +28,10 @@
 	import { ref } from 'vue';
     import Note from './Note.vue';
 	import AddNoteModal from './AddNoteModal.vue'
-	const showAddModal = ref(false)
+	import { useNoteStore } from '../stores/NoteStore';
 
-	const notes = ref([{
-		title: "Sample Title",
-		text: "Some sample main text here, should be able to fit a few lines of text at least. should it have vertical scrolling?",
-		id: Math.floor(Math.random() * 1000000)
-	}])
+	const showAddModal = ref(false)
+	const noteStore = useNoteStore();
 
 	const deleteNote = (id) => {
 		console.log('removing note', id)
@@ -48,11 +45,7 @@
 	}
 
 	const addNote = (note) => {
-		notes.value.push({
-			title: note.title,
-			text: note.text,
-			id: Math.floor(Math.random() * 1000000)
-		})
+		noteStore.addNote(note);
 		showAddModal.value = false;
 	}
 </script>
