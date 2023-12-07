@@ -9,8 +9,8 @@
 
 <script setup>
     import { ref } from "vue";
-    const newNoteString = ref(""); /* Typing in the textbox is a state change */ 
-    const newNoteTitle = ref("");
+    const newNoteString = ref("Sample Title"); /* Typing in the textbox is a state change */ 
+    const newNoteTitle = ref("Sample note text");
     const emit = defineEmits(['addNote', 'close'])
 
     function emitAddNote() {

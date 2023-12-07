@@ -8,7 +8,7 @@
             </div>
         
             <div id="main-text">
-                {{ note.mainText }}
+                {{ mainText }}
             </div>
             <div id="btns-container" >
                 <div id="btns-div" class="flex justify-evenly">
@@ -23,16 +23,19 @@
 
         <template v-slot:header> You are editing {{ note.title }} </template>
         <template v-slot:body>
-            <textarea id="text-area">{{ note.text }}</textarea>
+            <textarea class="w-full h-96" id="text-editor" v-model="mainText">{{ mainText }}</textarea>
         </template>
     </NotePopupModal>
 </template>
 
 <script setup>
     import NotePopupModal from './NotePopupModal.vue';
-	
     import { ref } from 'vue'
 
+    const emit = defineEmits(['delete', 'edit']);
+    const props = defineProps(['note']);
+
+    const mainText = ref(props.note.mainText);
     const showNotePopupModal = ref(false);
 
     function onEditClick(){
@@ -41,6 +44,7 @@
     }
 
     function onEditClose(){
+        //mainText.value = document.querySelector("#text-editor").value;
         showNotePopupModal.value = false;
     }
 	
@@ -48,9 +52,6 @@
 		emit('delete', props.note.id)
 	}
     
-    const emit = defineEmits(['delete', 'edit']);
-
-    const props = defineProps(['note']);
 </script>
 
 <style scoped>

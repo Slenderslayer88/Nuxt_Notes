@@ -7,18 +7,19 @@
 			/>
 		</div>
 	</Teleport>
-	<div class="cards-container flex space-x5"> 
+	<div class="cards-container flex ml-5 items-start flex-wrap gap-4 w-3/4 mt-5 mr-5"> 
 		<div v-for="note in noteStore.notes" 
 			ref="el"
 			key="note.name"
+            class="w-auto h-auto inline"
 		>
 			<Note
 				v-bind:note="note"
 				@delete="deleteNote"
 			/>
 		</div>
-        <div class="flex justify-between flex-col w-80 h-80">
-		    <button @click="showAddModal = true">+</button> 
+        <div class="flex justify-between flex-col relative" id="addBtnDiv">
+		    <button id="addBtn" class="absolute text-4xl bottom-1/2 right-1/2" @click="showAddModal = true">+</button> 
 	    </div>  
 	</div>
     
@@ -45,6 +46,19 @@
 </script>
 
 <style scoped>
+    .cards-container {
+        height: 204px;
+    }
+    #addBtn {
+        width: 75px;
+        height: 75px;
+        transform: translate(+50%, +50%);
+    }
+
+    #addBtnDiv{
+        width: 204px;
+        height: 204px;
+    }
     .note {
         display: flex;
         flex-direction: row;
