@@ -31,7 +31,7 @@
 	import AddNoteModal from './AddNoteModal.vue'
 	import { useNoteStore } from '../stores/NoteStore';
 
-	const showAddModal = ref(false)
+	const showAddModal = ref(false);
 	const noteStore = useNoteStore();
 
 	const deleteNote = (id) => {

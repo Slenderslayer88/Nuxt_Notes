@@ -3,7 +3,7 @@
         <div id="border" class="flex justify-between flex-col">
             <div id="header">
                 <div id="title" class="font-bold text-2xl">
-                    {{ note.title }}
+                    {{ title }}
                 </div>
             </div>
         
@@ -21,7 +21,9 @@
 
     <NotePopupModal v-if="showNotePopupModal" @close="onEditClose">
 
-        <template v-slot:header> You are editing {{ note.title }} </template>
+        <template v-slot:header>
+            <textarea class="w-full resize-none" id="title-editor" v-model="title">{{ title }} </textarea>
+        </template>
         <template v-slot:body>
             <textarea class="w-full h-96" id="text-editor" v-model="mainText">{{ mainText }}</textarea>
         </template>
@@ -35,6 +37,7 @@
     const emit = defineEmits(['delete', 'edit']);
     const props = defineProps(['note']);
 
+    const title = ref(props.note.title);
     const mainText = ref(props.note.mainText);
     const showNotePopupModal = ref(false);
 
@@ -44,7 +47,6 @@
     }
 
     function onEditClose(){
-        //mainText.value = document.querySelector("#text-editor").value;
         showNotePopupModal.value = false;
     }
 	
