@@ -37,6 +37,7 @@
     const emit = defineEmits(['delete', 'edit']); //emits as seen in previous component
     const props = defineProps(['note']);
 
+    const title = ref(props.note.title);
     const mainText = ref(props.note.mainText);
     const showNotePopupModal = ref(false);
 
