@@ -53,6 +53,9 @@
         width: 75px;
         height: 75px;
         transform: translate(+50%, +50%);
+		color: #ababab;
+		background-color: rgb(29, 121, 63);
+		border-radius: 5rem;;
     }
 
     #addBtnDiv{

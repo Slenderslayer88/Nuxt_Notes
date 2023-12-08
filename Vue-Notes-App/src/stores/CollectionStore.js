@@ -9,7 +9,7 @@ export const useCollectionStore = defineStore('collection', () => {
 
 	//ADD A COLLECTION OBJECT
 	function addCollection({name, noteArr}) {
-		collections.push(new Collection(name, notearr));
+		collections.push(new Collection(name, noteArr));
 	}
 	
 	return { currentCollection, collections, addCollection }

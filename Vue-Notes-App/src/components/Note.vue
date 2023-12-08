@@ -63,15 +63,24 @@
         text-align: center;
     }
     #border {
+		border-radius: 2rem;
         border-style: solid;
         padding: 1.5em;
         width: 150px;
         height: 150px;
+		font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		color: #515664;
+		background-color: rgb(56, 213, 237);
     }
     .btn {
         display: inline;
+		background-color: rgb(56, 213, 237);
+		color: #515664;
     }
     .right-align {
         float: right;
     }
+	button {
+		border-radius: 1rem;
+	}
 </style>
