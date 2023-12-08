@@ -7,10 +7,8 @@ const num = 10;
 </script>
 
 <template>
-	<div id="top"></div>
-    <!-- <CollectionBar class="w-1/4 h-screen"/> -->
-	<NotesContainer />
-	<!-- <RouterView /> -->
+	<div id="top"></div><!--Teleport target-->
+	<NotesContainer /> <!--Component-->
 </template>
 
 <style>

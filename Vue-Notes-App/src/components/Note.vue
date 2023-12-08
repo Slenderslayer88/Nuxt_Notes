@@ -1,6 +1,6 @@
 <template>
     <div class="flex">
-        <div id="border" class="flex justify-between flex-col">
+        <div id="border" class="flex justify-between flex-col"> <!--tailwind css-->
             <div id="header">
                 <div id="title" class="font-bold text-2xl">
                     {{ title }}
@@ -11,7 +11,7 @@
                 {{ mainText }}
             </div>
             <div id="btns-container" >
-                <div id="btns-div" class="flex justify-evenly">
+                <div id="btns-div" class="flex justify-evenly"> <!--Tail wind for display: flex; justify content: space-around-->
                     <button id="delete-btn" @click="onDeleteClick">Delete</button>
                     <button id="show-modal" @click="onEditClick">Edit</button>
                 </div>   
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <NotePopupModal v-if="showNotePopupModal" @close="onEditClose">
+    <NotePopupModal v-if="showNotePopupModal" @close="onEditClose"> <!--v-if directive, component-->
 
         <template v-slot:header>
             <textarea class="w-full resize-none" id="title-editor" v-model="title">{{ title }} </textarea>
@@ -34,10 +34,9 @@
     import NotePopupModal from './NotePopupModal.vue';
     import { ref } from 'vue'
 
-    const emit = defineEmits(['delete', 'edit']);
+    const emit = defineEmits(['delete', 'edit']); //emits as seen in previous component
     const props = defineProps(['note']);
 
-    const title = ref(props.note.title);
     const mainText = ref(props.note.mainText);
     const showNotePopupModal = ref(false);
 

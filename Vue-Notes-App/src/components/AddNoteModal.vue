@@ -1,7 +1,7 @@
 <template>
     <div class="modal">
         <textarea v-model="newNoteTitle" name="title" id="title" cols="30" rows="1"></textarea>
-        <textarea v-model="newNoteString" name="note" id="note" cols="30" rows="10"></textarea> <!-- newNote is 2 way binded to the text box-->
+        <textarea v-model="newNoteString" name="note" id="note" cols="30" rows="10"></textarea> <!-- newNoteString is 2 way binded to the text box-->
         <button @click="emitAddNote">Add Note</button>
         <button class="close" @click="emitClose">Close</button> <!-- listen for click event, on click, hide modal-->
     </div>
@@ -9,8 +9,8 @@
 
 <script setup>
     import { ref } from "vue";
-    const newNoteString = ref("Sample Title"); /* Typing in the textbox is a state change */ 
-    const newNoteTitle = ref("Sample note text");
+    const newNoteString = ref("Sample note main text"); /* Typing in the textbox is a state change */ 
+    const newNoteTitle = ref("Sample Title");
     const emit = defineEmits(['addNote', 'close'])
 
     function emitAddNote() {
