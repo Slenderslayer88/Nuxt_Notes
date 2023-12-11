@@ -11,7 +11,8 @@ const num = 10;
 	<NotesContainer /> <!--Component-->
     <footer class="mb-5 ml-5 fixed bottom-0 left-0">
         <div id="Rory's contributions" >
-            Garret Mullings's contributions: Testing
+            Garrett Mullings's contributions: My contributions included NotesContainer.vue, NoteStore.vue, AddNoteModal.vue, and Note.class.js. This provided most of the list rendering
+			functionality and the add note functionality.
         </div>
         <div id="Rory's contributions" >
             Rory Schillo's contributions: My main contribution was adding the note editor popup modal. This feature allows users to edit the main text and title of notes using Vue's modal 
